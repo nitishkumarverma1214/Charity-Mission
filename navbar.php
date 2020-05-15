@@ -23,15 +23,14 @@
         <ul class="dropdown-menu">
             <li><a href="geographical_area_master.php">Geographic Area</a></li>
             
-            <li><a href="profession_master.php">Profession</a></li>
-            
-            <li><a href="#">Qualification</a></li>
-			   <li><a href="#">resposibility</a></li>
-			   <li><a href="#">Relationship</a></li>
-			   <li><a href="#">Blood Group</a></li>
-			   <li><a href="#">Languages</a></li>
-                           <li><a href="office_code.php">Office Code</a></li>
-			   <li><a href="#">Sponsering type</a></li>
+            <li><a href="profession_master.php">Profession</a></li> 
+            <li><a href="qualification_master.php">Qualification</a></li>
+            <li><a href="responsibility_master.php">resposibility</a></li>
+            <li><a href="relationship_master.php">Relationship</a></li>
+            <li><a href="blood_grp_master.php">Blood Group</a></li>
+            <li><a href="language_master.php">Languages</a></li>
+            <li><a href="office_code.php">Office Code</a></li>
+            <li><a href="spon_type_master.php">Sponsering type</a></li>
 			   <li><a href="#">Supporting/Prayer Group Details</a></li>
 			   <li><a href="#">Member</a></li>
 			  <li><a href="#">Staff</a></li>
