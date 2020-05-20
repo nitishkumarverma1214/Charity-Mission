@@ -12,7 +12,12 @@
 
     </head>
     <body>
-     <?php include 'navbar.php'?>;
+     <?php include 'navbar.php';
+     if( !(isset($_SESSION['user'])))
+       {
+           header("location:index.php");
+       }
+     ?>;
        <div class="container">
 	
 <div class="row">
@@ -21,7 +26,7 @@
 <h1 style="text-align:center;">
 	Add a New Profession
 </h1>
-	<div class="col-md-3"></div>
+    <div class="col-md-3"></div>
 	<div class="col-md-6">
 	
         <form method="post" action="profession_insert.php">

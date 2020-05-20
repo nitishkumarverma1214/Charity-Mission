@@ -1,7 +1,12 @@
 
 
-    <?php include 'navbar.php'?>;
-<form action="" method="POST">
+    <?php include 'navbar.php';
+    if( !(isset($_SESSION['user'])))
+       {
+           header("location:index.php");
+       }
+    ?>
+<form action="geo_insert.php" method="POST">
     <div class="container-fluid">
         <div class="row">
             <h1 style="text-align: center;">
@@ -18,8 +23,8 @@
             description:<input class="form-control geo_search" type="text" placeholder="description" id="geo_name" name="description" disabled>
 	</div>
                 <div class ="form-group" id="_state" hidden>
-                    state code:<input class="form-control geo_search" type="text" placeholder="state code"  name="geo_state" id="state_code" >
-                    state name:<input class="form-control geo_search" type="text" placeholder="state name"  name="geo_state_name"  id="state_name">
+                    state code:<input class="form-control state_search" type="text" placeholder="state code"  name="geo_state" id="state_code" >
+                    state name:<input class="form-control state_search" type="text" placeholder="state name"  name="geo_state_name"  id="state_name">
 	
                 </div>
 	
@@ -32,7 +37,7 @@
 	<div class ="form-group">
               <input type="submit" value = "add" class="btn btn-lg btn-primary">
 		
-		<input type="submit" value = "modify" class="btn btn-lg btn-success">	
+              <input type="button" value = "modify" class="btn btn-lg btn-success">	
 		
 		<button class="btn btn-lg btn-danger ">
 	 cancel
@@ -52,7 +57,7 @@
   <script type="text/javascript">
    var table;
    
-   function fill_geo_data(table,query){ 
+   function fill_geo_data(table,query,insert){ 
        
         $.ajax({
    url:"fill_geo.php",
@@ -62,18 +67,25 @@
    {
     $('#fill_geo').html(data);
     var fill =$('#fill_geo').text().split('~');
-    $('#geo_code').val(fill[0]);
+    if(insert ==='y'){
+        $('#state_code').val(fill[0]);
+    $('#state_name').val(fill[1]);
+    }
+    else{
+       $('#geo_code').val(fill[0]);
     $('#geo_name').val(fill[1]);
     if(fill.length ===4){
         $('#state_code').val(fill[2]);
     $('#state_name').val(fill[3]);
+    } 
     }
+    
     }
         });
     }
     
     
-   function load_geo(table,query=''){ 
+   function load_geo(table,query='',insert='n'){ 
        
         $.ajax({
    url:"geo_fetch.php",
@@ -90,10 +102,10 @@
                         return $(this).text();
                  }).get();
                  
-               fill_geo_data(table,tableData[0]);
+               fill_geo_data(table,tableData[0],insert);
                
                 if (table === 'state_master')
-                   load_geo('district_master',tableData[0]);
+                   load_geo('district_master',tableData[0],insert);
                     
 				});
     
@@ -127,6 +139,20 @@
   else
   {
    load_geo(table);
+  }
+ });       
+ 
+ $('.state_search').keyup(function(){
+           
+  var search_geo = $(this).val();
+  if(search_geo !== '')
+  {
+      
+   load_geo('state_master',search_geo,'y');
+  }
+  else
+  {
+   load_geo('state_master','y');
   }
  });       
  
