@@ -130,7 +130,7 @@ CREATE TABLE staff(
 
 CREATE TABLE member_responsibility (member_no varchar(10) not null, resp_cd char (3) not null, active char(1) not null, ent_date datetime, user_id varchar(20), PRIMARY KEY (member_no), FOREIGN KEY (member_no) REFERENCES member(member_no), foreign key (resp_cd) REFERENCES responsibility_master(resp_cd))
 
-
+CREATE TABLE supporting_grp_master (sup_grp_no varchar(8), title varchar(8), name varchar(100), leader_no varchar(10), leader_no_2 varchar(10) NULL, office_cd varchar(5) NULL, district_cd varchar(5) NULL, admn_area varchar(15) NULL, ent_date varchar(10) NULL, user_id varchar(40) NULL, status varchar(1) NULL, given_upto varchar(10) NULL, PRIMARY KEY (sup_grp_no), FOREIGN KEY (leader_no) REFERENCES member(member_no), FOREIGN KEY (leader_no_2) REFERENCES member(member_no), FOREIGN KEY (office_cd) REFERENCES office_field_cd(office_cd), FOREIGN KEY (district_cd) REFERENCES district_master(district_cd), FOREIGN KEY (admn_area) REFERENCES admnarea(admn_area) )
 
 
 
