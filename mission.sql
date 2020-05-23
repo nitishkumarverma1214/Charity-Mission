@@ -128,6 +128,7 @@ CREATE TABLE staff(
 	FOREIGN KEY (mag_lang) REFERENCES language_master(lang_cd)
 );
 
+CREATE TABLE member_responsibility (member_no varchar(10) not null, resp_cd char (3) not null, active char(1) not null, ent_date datetime, user_id varchar(20), PRIMARY KEY (member_no), FOREIGN KEY (member_no) REFERENCES member(member_no), foreign key (resp_cd) REFERENCES responsibility_master(resp_cd))
 
 
 
