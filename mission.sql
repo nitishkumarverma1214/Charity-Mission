@@ -132,6 +132,13 @@ CREATE TABLE member_responsibility (member_no varchar(10) not null, resp_cd char
 
 CREATE TABLE supporting_grp_master (sup_grp_no varchar(8), title varchar(8), name varchar(100), leader_no varchar(10), leader_no_2 varchar(10) NULL, office_cd varchar(5) NULL, district_cd varchar(5) NULL, admn_area varchar(15) NULL, ent_date varchar(10) NULL, user_id varchar(40) NULL, status varchar(1) NULL, given_upto varchar(10) NULL, PRIMARY KEY (sup_grp_no), FOREIGN KEY (leader_no) REFERENCES member(member_no), FOREIGN KEY (leader_no_2) REFERENCES member(member_no), FOREIGN KEY (office_cd) REFERENCES office_field_cd(office_cd), FOREIGN KEY (district_cd) REFERENCES district_master(district_cd), FOREIGN KEY (admn_area) REFERENCES admnarea(admn_area) )
 
+ALTER TABLE life_sponsor MODIFY COLUMN life_spon_id int(11) AUTO_INCREMENT
+
+ALTER TABLE life_sponsor ADD COLUMN amount varchar(10)
+
+ALTER TABLE life_sponsor MODIFY COLUMN ent_date varchar(10)
+
+ALTER TABLE life_sponsor MODIFY COLUMN cele_date varchar(10)
 
 
 
