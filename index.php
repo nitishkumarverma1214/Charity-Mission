@@ -30,20 +30,22 @@ body {
 
 
 <div class="container-fluid">
+     
     <div class="row">
-        <h1 style="text-align: center">User Login</h1>
+       
+        <h1 style="text-align: center" class="display-4">User Login</h1>
         <div class="col-md-3"></div>
         <div class="col-md-6">
             <form method="post" action="login.php" id="login">
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">User ID</label>
-        <div class="col-md-3">
+        <div class="col-sm-3">
             <input type="text" class="form-control "id="user_id" name="user_id" required >
                  </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Password</label>
-        <div class="col-md-3">
+        <div class="col-sm-3">
             <input type="password" class="form-control "id="pass" name="pass" required>
                  </div>
                 </div>
@@ -55,9 +57,10 @@ body {
         <div class="col-md-3"></div>
         <div class="col-md-6">
         <?php
-if (isset($_SESSION['msg'])) {
-echo $_SESSION['msg'];
-$_SESSION['msg'] = "";
+if (isset($_SESSION['msg'])) {?>
+            <b><?php echo $_SESSION['msg']; ?></b>
+<?php
+            $_SESSION['msg'] = "";
 }
 ?>
     </div>

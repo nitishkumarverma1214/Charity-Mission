@@ -33,9 +33,11 @@ session_start();
             <li><a href="language_master.php">Languages</a></li>
             <li><a href="office_code.php">Office Code</a></li>
             <li><a href="spon_type_master.php">Sponsering type</a></li>
-			   <li><a href="#">Supporting/Prayer Group Details</a></li>
-                           <li><a href="responsibility.php">Member</a></li>
-			  <li><a href="#">Staff</a></li>
+            <li><a href="supporting_grp_details.php">Supporting/Prayer Group Details</a></li>
+            <li><a href="life_sponsor.php">Life sponsor</a></li>
+            <li><a href="member_responsibility.php">Member responsibility</a></li>
+            <li><a href="member_master.php">Member</a></li>
+            <li><a href="staff_master.php">Staff</a></li>
 
         </ul>
       </li>

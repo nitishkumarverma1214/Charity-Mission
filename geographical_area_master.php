@@ -14,13 +14,13 @@
             </h1>
             <div class="col-md-6">
                 <div class ="form-group">
-                    code:<input class="form-control geo_search" type="text" placeholder="code"  name="code" id="geo_code" disabled>
+                    code:<input class="form-control geo_search" type="text" placeholder="code"  name="code" id="geo_code" disabled required>
 	</div>
 	
 	
 	
 	<div class ="form-group">
-            description:<input class="form-control geo_search" type="text" placeholder="description" id="geo_name" name="description" disabled>
+            description:<input class="form-control geo_search" type="text" placeholder="description" id="geo_name" name="description" disabled required>
 	</div>
                 <div class ="form-group" id="_state" hidden>
                     state code:<input class="form-control state_search" type="text" placeholder="state code"  name="geo_state" id="state_code" >
@@ -38,10 +38,9 @@
               <input type="submit" value = "add" class="btn btn-lg btn-primary">
 		
               <input type="button" value = "modify" class="btn btn-lg btn-success">	
-		
-		<button class="btn btn-lg btn-danger ">
-	 cancel
-	</button>
+              <input type="reset" value = "cancel" class="btn btn-lg btn-warning">	
+	 <button type="button" class="btn  btn-danger btn-lg text-secondary" ><a href="landing.php" style="color: antiquewhite">Exit</a></button>
+        
 	</div>
 	
             </div>
